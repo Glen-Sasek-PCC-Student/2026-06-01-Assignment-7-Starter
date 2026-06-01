@@ -1,46 +1,41 @@
-// ------------- FILE HEADER -------------
-// Author ✅: 
-// Assignment ✅:
-// Date ✅:
-// Citations: 
-
-
-// ------------- ZYBOOKS SCORES -------------
-// Chapter ✅: 
-// Participation ✅: 
-// Challenge ✅:
-// Labs ✅:
-
-
-// ------------- DISCORD POSTS -------------
-// https://discord.com/invite/URYKKf8YHm
-// Count ✅:
-// Links (Optional): 
-
-
-// ------------- DESIGN DOCUMENT -------------
-// A. INPUT ✅: 
-// B. OUTPUT ✅:
-// C. CALCULATIONS ✅:
-// D. LOGIC and ALGORITHMS ✅:
-//    (Optional) flow chart link or file name: 
-
-
-// ------------- TESTING -------------
-// PASS ALL GIVEN SAMPLE RUN TESTS ✅: 
-// (Optional) Additional tests count:   
-
-
-// ------------- CODE -------------
 #include <iostream>
+#include <limits>
+#include <iomanip>
 
 using namespace std;
 
+const double ASSIGNMENT_WEIGHT = 0.60;
+const double EXAM_WEIGHT = 0.20;
+
+const int MIN_ASSIGNMENT_COUNT = 0;
+const int MAX_ASSIGNMENT_COUNT = 10;
+
+const double MIN_SCORE = 0.0;
+const double MAX_SCORE = 4.0;
+
+const string PROMPT_NUM_ASSIGNMENTS = "Enter the number of assignments (0 to 10): ";
+
 // Function prototypes (if any)
+void helloMessage();
+void usageMessage();
+void goodbyeMessage();
 
+int readInt(string prompt); 
+double readDouble(string prompt); 
 
-// Main function
+double assignAverage(int numAssigns); 
+
+// The assignments are weighted at 60%, 
+// the midterm and final exams are weighted at 20% each.
+double calcDecimalGrade(double assignAvg, double midtermExam, double finalExam);
+
+char calcLetterGrade(double decimalGrade); 
+
+double getScoreInRange(string prompt);
+
+void displayGrade(double decimalGrade, char letterGrade);// Main function
 // https://en.cppreference.com/w/cpp/language/main_function.html
+
 int main(int argc, char* argv[]) {
   cout << "Hello, World!" << endl;
   return 0;
